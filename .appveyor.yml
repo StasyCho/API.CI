@@ -8,13 +8,10 @@ branches:
 
 build: off
 
-steps:
-  - name: Grant execute permission for gradlew
-    run: chmod +x gradlew
-
 install:
   - java -jar ./artifacts/app-mbank.jar &
 
 build_script:
+  - chmod +x gradlew
   - ./gradlew test --info
 
